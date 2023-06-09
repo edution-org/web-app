@@ -1,17 +1,14 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { Link } from '@builder.io/qwik-city'
-import { Badge as ReactBadge } from '@edution-monorepo/react-ui'
-import { qwikify$ } from '@builder.io/qwik-react'
-
-const Badge = qwikify$(ReactBadge)
+import { Badge } from '@edution-monorepo/qwik-ui'
 
 export default component$(() => {
   return (
     <div>
       <h1>
         Welcome app <span class="lightning">⚡️</span>
-        <Badge>Test</Badge>
+        <Badge variant="destructive">Test</Badge>
       </h1>
 
       <ul>

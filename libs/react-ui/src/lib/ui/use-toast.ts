@@ -1,4 +1,5 @@
 // Inspired by react-hot-toast library
+/** @jsxImportSource react */
 import * as React from 'react'
 
 import type { ToastActionElement, ToastProps } from './toast'

@@ -7,7 +7,10 @@
     "build": {
       "executor": "qwik-nx:build",
       "options": {
-        "runSequence": ["app:build.client", "app:build.ssr"],
+        "runSequence": [
+          "app:build.client",
+          "app:build.ssr"
+        ],
         "outputPath": "dist/apps/app"
       },
       "configurations": {
@@ -47,7 +50,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["../../coverage/apps/app"],
+      "outputs": [
+        "../../coverage/apps/app"
+      ],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/app"
@@ -70,9 +75,13 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/app/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "deploy": {
@@ -80,14 +89,18 @@
       "options": {
         "dist": "dist/apps/app/client"
       },
-      "dependsOn": ["build-cloudflare"]
+      "dependsOn": [
+        "build-cloudflare"
+      ]
     },
     "preview-cloudflare": {
       "executor": "@k11r/nx-cloudflare-wrangler:serve-page",
       "options": {
         "dist": "dist/apps/app/client"
       },
-      "dependsOn": ["build-cloudflare"]
+      "dependsOn": [
+        "build-cloudflare"
+      ]
     },
     "build-cloudflare": {
       "executor": "nx:run-commands",

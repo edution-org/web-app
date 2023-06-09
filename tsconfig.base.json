@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@edution-monorepo/qwik-ui": ["libs/qwik-ui/src/index.ts"],
       "@edution-monorepo/react-ui": ["libs/react-ui/src/index.ts"]
     }
   },
