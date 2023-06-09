@@ -5,7 +5,7 @@
   "scripts": {},
   "private": true,
   "dependencies": {
-    "qwik-nx": "1.0.4"
+    "qwik-nx": "1.0.5"
   },
   "devDependencies": {
     "@builder.io/qwik": "~1.1.5",
