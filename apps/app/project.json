@@ -11,7 +11,8 @@
           "app:build.client",
           "app:build.ssr"
         ],
-        "outputPath": "dist/apps/app"
+        "outputPath": "dist/apps/app",
+        "postcssConfig": "apps/app/postcss.config.js"
       },
       "configurations": {
         "preview": {},
