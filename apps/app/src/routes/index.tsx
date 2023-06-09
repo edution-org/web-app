@@ -1,12 +1,17 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-import { Link } from '@builder.io/qwik-city';
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
+import { Link } from '@builder.io/qwik-city'
+import { Badge as ReactBadge } from '@edution-monorepo/react-ui'
+import { qwikify$ } from '@builder.io/qwik-react'
+
+const Badge = qwikify$(ReactBadge)
 
 export default component$(() => {
   return (
     <div>
       <h1>
         Welcome app <span class="lightning">⚡️</span>
+        <Badge>Test</Badge>
       </h1>
 
       <ul>
@@ -135,8 +140,8 @@ export default component$(() => {
         Blow my mind 🤯
       </Link>
     </div>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
   title: 'Welcome to Qwik',
@@ -146,4 +151,4 @@ export const head: DocumentHead = {
       content: 'Qwik site description',
     },
   ],
-};
+}
