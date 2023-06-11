@@ -1,14 +1,18 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { Link } from '@builder.io/qwik-city'
-import { Badge } from '@edution-monorepo/qwik-ui'
+import { Dialog } from '@edution-monorepo/qwik-ui'
 
 export default component$(() => {
   return (
     <div>
       <h1>
         Welcome app <span class="lightning">⚡️</span>
-        <Badge variant="destructive">Test</Badge>
+        <Dialog
+          triggerText="Open"
+          title="Important dialog"
+          description="This is some description just to test if island hydration works."
+        />
       </h1>
 
       <ul>

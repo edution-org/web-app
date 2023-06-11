@@ -22,3 +22,5 @@ export * from './lib/sheet'
 export * from './lib/slider'
 export * from './lib/switch'
 export * from './lib/textarea'
+
+export * from './lib/fragment'

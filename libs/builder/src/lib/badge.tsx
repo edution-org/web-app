@@ -5,6 +5,7 @@ import { Badge } from '@edution-monorepo/qwik-ui'
 export const BadgeBuilder: RegisteredComponent = {
   component: Badge,
   name: 'Badge',
+  canHaveChildren: true,
   inputs: [
     { name: 'children', type: 'text' },
     { name: 'variant', type: 'string' },
