@@ -1,26 +1,34 @@
 /** @jsxImportSource react */
-import * as React from 'react'
+import { Input as InputPrimitive } from '../primitives/input'
+import { Label } from '../primitives/label'
 
-import { cn } from '../utils/cn'
+interface InputProps {
+  label: string
+  placeholder: string
+  type: string
+  id: string
+  text?: string
+  disabled?: boolean
+}
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
-    return (
-      <input
+export function Input({
+  label,
+  placeholder,
+  type,
+  id,
+  text,
+  disabled,
+}: InputProps) {
+  return (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor={id}>{label}</Label>
+      <InputPrimitive
         type={type}
-        className={cn(
-          'flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-          className,
-        )}
-        ref={ref}
-        {...props}
+        id={id}
+        placeholder={placeholder}
+        disabled={disabled}
       />
-    )
-  },
-)
-Input.displayName = 'Input'
-
-export { Input }
+      {text && <p className="text-sm text-muted-foreground">{text}</p>}
+    </div>
+  )
+}
