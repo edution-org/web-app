@@ -1,19 +1,12 @@
-import { Slot, component$ } from '@builder.io/qwik'
+import { Fragment, component$ } from '@builder.io/qwik'
 import { RegisteredComponent } from '@builder.io/sdk-qwik'
 
-export const Fragment = component$(() => {
-  return <Slot />
+export const FragmentAlt = component$((props) => {
+  return <Fragment {...props} />
 })
 
 export const FragmentBuilder: RegisteredComponent = {
-  component: Fragment,
+  component: FragmentAlt,
   name: 'Core:Fragment',
-
-  inputs: [
-    {
-      name: 'text',
-      type: 'string',
-      defaultValue: 'Hello world',
-    },
-  ],
+  canHaveChildren: true,
 }
